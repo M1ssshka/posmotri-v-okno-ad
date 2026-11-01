@@ -178,6 +178,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -192,6 +193,15 @@ ol {
   outline-offset: 1px;
 }
 
+.search-form__checkbox:hover + .search-form__pseudo-checkbox {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form__checkbox:active + .search-form__pseudo-checkbox {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .button {
   border: 1px solid #fff;
   background-color: transparent;
@@ -203,11 +213,11 @@ ol {
   cursor: pointer;
   padding: 6px 0;
   inline-size: 194px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-  background-color: rgb(255 255 255 / 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .button:active {
@@ -222,6 +232,15 @@ ol {
 .button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 2px;
+}
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: transparent;
+  color: #fff;
 }
 
 .search-form__submit-button {
@@ -282,7 +301,7 @@ ol {
 }
 
 .content__card-link:hover {
-  background-color: rgb(255 255 255 / 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .content__card-link:focus {
@@ -294,8 +313,12 @@ ol {
   outline-offset: 2px;
 }
 
+.content__card-link:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .content__card-link_current {
-  background-color: rgb(255 255 255 / 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .content__video-card {
